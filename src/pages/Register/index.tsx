@@ -9,7 +9,7 @@ export const Register = () => {
     <TemplateContainer>
         <TemplateContent>
             <TemplateHeroSideBar >
-                <img className='h-40 md:h-96 my-8 md:my-0' src="create-account.png" alt="image-login" />
+                <img className='h-40 md:h-96 my-8 md:my-0' src="create-account.png" alt="image-register" />
             </TemplateHeroSideBar>
             <TemplateMain>
                 <h1 className='font-bold text-3xl'>Crie sua conta</h1>
