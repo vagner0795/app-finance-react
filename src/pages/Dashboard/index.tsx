@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import { TemplateContainer } from '../../components/templates'
 import { Button } from '../../components/button'
 import { Card } from './Components/Cards'
@@ -19,20 +20,22 @@ export const Dashboard = () => {
     { id: '8', title: 'Mercado', category: 'Alimentação', price: 739.99 },
     { id: '9', title: 'Disney', category: 'Streaming', price: 19.99 },
   ]
+
+  const handleNavigateToNewExpense = () => {
+    Router.push('dashboard/add')
+  }
   return (
     <TemplateContainer className='flex-col items-center justify-start'>
       <header className='w-full max-w-screen-lg flex justify-between h-1/6 items-center px-4'>
         <span className='font-bold text-xl sm:text-2xl text-center'>Controle seus gastos</span>
 
         <nav className=' flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 sm:flex-row'>
-          <Button>Adicionar Conta</Button>
+          <Button onClick={() => handleNavigateToNewExpense()}>Adicionar Conta</Button>
           <Button variant='ghost'>Sair</Button>
         </nav>
       </header>
       <main className='w-full max-w-screen-lg h-5/6 p-4 mb-5 sm:mb-10 rounded-lg shadow-xl space-y-4 overflow-y-scroll sm:space-y-0 sm:grid content-start sm:grid-cols-3 bg-sky-200 sm:gap-4'>
-
-        {
-          array.map((item) => (
+        {array?.map((item) => (
             <Card
               key={item.id}
               title={item.title}
@@ -45,6 +48,7 @@ export const Dashboard = () => {
     </TemplateContainer>
   )
 }
+
 
 
 
